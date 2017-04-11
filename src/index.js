@@ -49,12 +49,12 @@ function createBrowserStackConnector(accessKey) {
     var opts = {
       key: accessKey,
       logfile: OS.win ? "NUL" : "/dev/null",
-      "enable-logging-for-api": true
-      // forceLocal: process.env["FORCE_LOCAL"] || false,
-      // proxyHost: process.env["PROXY_HOST"] || "",
-      // proxyPort: process.env["PROXY_PORT"] || "",
-      // proxyUser: process.env["PROXY_USER"] || "",
-      // proxyPass: process.env["PROXY_PASS"] || ""
+      "enable-logging-for-api": true,
+      forceLocal: process.env["FORCE_LOCAL"] || false,
+      proxyHost: process.env["PROXY_HOST"] || "",
+      proxyPort: process.env["PROXY_PORT"] || "",
+      proxyUser: process.env["PROXY_USER"] || "",
+      proxyPass: process.env["PROXY_PASS"] || ""
     };
 
     connector.start(opts, err => {
